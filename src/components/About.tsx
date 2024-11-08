@@ -1,5 +1,9 @@
-import { Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 
 export default function About() {
-  return <Typography variant="h1">Hello</Typography>;
+  return (
+    <Box id="About">
+      <Typography variant="h1">Hello</Typography>
+    </Box>
+  );
 }

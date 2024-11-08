@@ -4,12 +4,19 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
 import { IconButton, Menu, MenuItem, Typography } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import { sections } from '@/lib/constants';
+import { sections } from '@/lib/constants/layout.constants';
+import NavBarItem from './NavBarItem';
+import { ThemeMode } from '@/types/theme.types';
+import { DarkModeOutlined, LightModeOutlined } from '@mui/icons-material';
 
-const ResponsiveAppBar = () => {
+interface NavBarProps {
+  toggleTheme: () => void;
+  theme: ThemeMode;
+}
+
+const ResponsiveAppBar = ({ toggleTheme, theme }: NavBarProps) => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
@@ -23,17 +30,26 @@ const ResponsiveAppBar = () => {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar
+      position="static"
+      elevation={0}
+      sx={{ bgcolor: 'background.default' }}
+    >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: 'flex', md: 'none' },
+            }}
+          >
             <IconButton
               size="large"
-              aria-label="account of current user"
+              aria-label="navigation menu"
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color="inherit"
+              sx={{ color: 'text.primary' }}
             >
               <MenuIcon />
             </IconButton>
@@ -60,18 +76,42 @@ const ResponsiveAppBar = () => {
                   </Typography>
                 </MenuItem>
               ))}
+              <IconButton
+                onClick={() => toggleTheme()}
+                sx={{
+                  padding: '16px',
+                  color: 'text.primary',
+                }}
+              >
+                {theme !== ThemeMode.Light ? (
+                  <LightModeOutlined />
+                ) : (
+                  <DarkModeOutlined />
+                )}
+              </IconButton>
             </Menu>
           </Box>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: 'none', md: 'flex' },
+              justifyContent: 'flex-end',
+            }}
+          >
             {sections.map((section) => (
-              <Button
-                key={section}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {section}
-              </Button>
+              <NavBarItem item={section} key={section} />
             ))}
+            <IconButton
+              onClick={() => toggleTheme()}
+              sx={{ color: 'text.primary' }}
+            >
+              {theme !== ThemeMode.Light ? (
+                <LightModeOutlined />
+              ) : (
+                <DarkModeOutlined />
+              )}
+            </IconButton>
           </Box>
         </Toolbar>
       </Container>
