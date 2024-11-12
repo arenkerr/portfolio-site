@@ -32,10 +32,10 @@ const Projects = async () => {
             </Typography>
 
             <Box mt={2}>
-              <Chip label={project.language} size="small" />
+              <Chip label={project.language} size="small" color="secondary" />
               <Typography variant="body2" mt={2}>
                 <em>Updated {moment(project.updated_at).fromNow()}</em>
-              </Typography>{' '}
+              </Typography>
             </Box>
           </Paper>
         ))}

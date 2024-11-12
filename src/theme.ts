@@ -7,6 +7,11 @@ export const nunito = Nunito({ subsets: ['latin'], weight: ['400', '700'] });
 export const lora = Lora({ subsets: ['latin'], weight: ['400'] });
 
 const shared = createTheme({
+  palette: {
+    secondary: {
+      main: THEME_COLORS.GREEN_400,
+    },
+  },
   typography: {
     fontFamily: nunito.style.fontFamily,
     h1: {
@@ -63,6 +68,9 @@ const dark = createTheme({
     primary: {
       main: THEME_COLORS.GREEN_100,
     },
+    secondary: {
+      main: THEME_COLORS.GREEN_400,
+    },
   },
   typography: shared.typography,
 });
@@ -79,6 +87,9 @@ const light = createTheme({
     },
     primary: {
       main: THEME_COLORS.GREEN_900,
+    },
+    secondary: {
+      main: THEME_COLORS.GREEN_400,
     },
   },
   typography: shared.typography,

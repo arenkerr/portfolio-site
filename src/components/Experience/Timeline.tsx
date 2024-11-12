@@ -35,7 +35,7 @@ const ExperienceTimeline = () => {
             <Typography variant="subtitle1">{job.years}</Typography>
             <Accordion elevation={0}>
               <AccordionSummary
-                expandIcon={<ArrowDropDownIcon />}
+                expandIcon={<ArrowDropDownIcon color="primary" />}
                 sx={{ justifyContent: 'flex-start', flexGrow: 0 }}
               >
                 <Typography variant="subtitle1">{job.title}</Typography>
