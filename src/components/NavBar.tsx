@@ -6,7 +6,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Container from '@mui/material/Container';
 import { IconButton, Menu, MenuItem, Typography } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import { sections } from '@/lib/constants/layout.constants';
+import { sections } from '@/lib/config';
 import NavBarItem from './NavBarItem';
 import { ThemeMode } from '@/types/theme.types';
 import { DarkModeOutlined, LightModeOutlined } from '@mui/icons-material';
@@ -40,7 +40,7 @@ const ResponsiveAppBar = ({ toggleTheme, theme }: NavBarProps) => {
           <Box
             sx={{
               flexGrow: 1,
-              display: { xs: 'flex', md: 'none' },
+              display: { xs: 'flex', md: 'none', justifyContent: 'flex-end' },
             }}
           >
             <IconButton
@@ -97,6 +97,7 @@ const ResponsiveAppBar = ({ toggleTheme, theme }: NavBarProps) => {
               flexGrow: 1,
               display: { xs: 'none', md: 'flex' },
               justifyContent: 'flex-end',
+              alignItems: 'center',
             }}
           >
             {sections.map((section) => (
@@ -104,7 +105,7 @@ const ResponsiveAppBar = ({ toggleTheme, theme }: NavBarProps) => {
             ))}
             <IconButton
               onClick={() => toggleTheme()}
-              sx={{ color: 'text.primary' }}
+              sx={{ color: 'text.primary', height: 44, width: 44 }}
             >
               {theme !== ThemeMode.Light ? (
                 <LightModeOutlined />

@@ -13,6 +13,32 @@ const shared = createTheme({
       fontFamily: lora.style.fontFamily,
       fontSize: '48px',
     },
+    h2: {
+      fontFamily: lora.style.fontFamily,
+      fontSize: '36px',
+    },
+    subtitle1: {
+      fontWeight: 700,
+    },
+  },
+  components: {
+    MuiAccordionSummary: {
+      styleOverrides: {
+        content: {
+          flexGrow: 0,
+        },
+        root: {
+          padding: 0,
+        },
+      },
+    },
+    MuiAccordionDetails: {
+      styleOverrides: {
+        root: {
+          padding: 0,
+        },
+      },
+    },
   },
 });
 
@@ -25,6 +51,9 @@ const dark = createTheme({
     },
     text: {
       primary: THEME_COLORS.GREEN_100,
+    },
+    primary: {
+      main: THEME_COLORS.GREEN_100,
     },
   },
   typography: shared.typography,
@@ -39,6 +68,9 @@ const light = createTheme({
     },
     text: {
       primary: THEME_COLORS.GREEN_900,
+    },
+    primary: {
+      main: THEME_COLORS.GREEN_900,
     },
   },
   typography: shared.typography,

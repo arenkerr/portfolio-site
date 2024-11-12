@@ -18,7 +18,9 @@ export default function RootLayout({
       <ThemeProvider theme={mode === ThemeMode.Dark ? darkMode : lightMode}>
         <CssBaseline />
         <NavBar toggleTheme={toggleMode} theme={mode} />
-        <Container>{children}</Container>
+        <Container maxWidth="xs" id="cont">
+          {children}
+        </Container>
       </ThemeProvider>
     </>
   );
