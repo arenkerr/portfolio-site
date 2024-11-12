@@ -13,7 +13,7 @@ export const text = {
         title: 'Rhino, Software Engineer',
         years: '2023 - 2024',
         description: [
-          'Developed new features and maintained the core API for an active social media platform',
+          'Developed new features and maintained the core API for an active social media platform built for BIPOC, LGBTQ+ people, and women to share travel experiences',
           'Designed and implemented fullstack solutions for an internal admin dashboard, optimizing workflows for team members',
           'Integrated external APIs to collect and calculate use and performance metrics, visualizing data on the frontend',
         ],
@@ -21,7 +21,7 @@ export const text = {
       {
         title: 'Beam, Software Engineer',
         years: '2022 - 2023',
-        description: [],
+        description: [''],
       },
       {
         title: 'Halo Media, Software Engineer',

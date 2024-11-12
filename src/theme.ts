@@ -17,6 +17,14 @@ const shared = createTheme({
       fontFamily: lora.style.fontFamily,
       fontSize: '36px',
     },
+    h3: {
+      fontFamily: lora.style.fontFamily,
+      fontSize: '24px',
+    },
+    h4: {
+      fontFamily: lora.style.fontFamily,
+      fontSize: '18px',
+    },
     subtitle1: {
       fontWeight: 700,
     },
