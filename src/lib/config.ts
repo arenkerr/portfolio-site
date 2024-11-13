@@ -21,12 +21,20 @@ export const text = {
       {
         title: 'Beam, Software Engineer',
         years: '2022 - 2023',
-        description: [''],
+        description: [
+          'Contributed to building a new platform for delivering emergency financial aid to users in need',
+          'Co-lead for epics, delivering new features such as payment methods and applicant screening',
+          'Contributed to code base with an emphasis on extendability and unit testing',
+        ],
       },
       {
         title: 'Halo Media, Software Engineer',
         years: '2019 - 2022',
-        description: [],
+        description: [
+          'Conducted detailed code reviews and provided estimates as front end technical lead on multiple projects',
+          'Contributed new features and bug fixes to React, React Native, and Angular applications',
+          'Built and interacted with APIs',
+        ],
       },
     ],
   },
