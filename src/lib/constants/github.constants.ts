@@ -1,0 +1,20 @@
+export const ACTIVITY_NAMES: { [key: string]: string } = {
+  PublicEvent: 'made a repo public',
+  CommitCommentEvent: 'created a commit comment',
+  CreateEvent: 'created a new branch',
+  DeleteEvent: 'deleted a branch',
+  ForkEvent: 'forked a repo',
+  GollumEvent: 'created/updated a wiki page',
+  IssueCommentEvent: 'activity on an issue comment',
+  IssuesEvent: 'activity on an issue',
+  MemberEvent: 'activity on repo collaborators',
+  PullRequestEvent: 'updated or opened a pull request',
+  PullRequestReviewEvent: 'activity on a pull request review',
+  PullRequestReviewCommentEvent: 'activity on a pull request comment',
+  PullRequestReviewThreadEvent:
+    'pull request thread marked as resolved/unresolved',
+  PushEvent: 'committed to a repo',
+  ReleaseEvent: 'activity on a release',
+  SponsorshipEvent: 'activity on a sponsorship listing',
+  WatchEvent: 'started watching a repo',
+};

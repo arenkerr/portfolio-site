@@ -5,3 +5,16 @@ export interface Project {
   updated_at: string;
   language: string;
 }
+
+export interface Activity {
+  id: string;
+  type: string;
+  created_at: string;
+  repo: {
+    name: string;
+  };
+  actor: {
+    display_login: string;
+    avatar_url: string;
+  };
+}

@@ -1,45 +1,70 @@
-import { Box, Chip, Link, Paper, Typography } from '@mui/material';
-import { text } from '@/lib/config';
-import { getRepos } from '@/api/github';
-import { Project } from '@/types/github.types';
-import moment from 'moment';
+'use client';
+import { Box, Tab, Tabs, Typography } from '@mui/material';
+import ProjectsTab from './ProjectsTab';
+import ActivityTab from './ActivityTab';
+import { useState } from 'react';
 
-const Projects = async () => {
-  const projects = await getRepos();
+interface TabPanelProps {
+  children?: React.ReactNode;
+  index: number;
+  value: number;
+}
+
+function CustomTabPanel(props: TabPanelProps) {
+  const { children, value, index, ...other } = props;
+
+  return (
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`simple-tabpanel-${index}`}
+      aria-labelledby={`simple-tab-${index}`}
+      {...other}
+    >
+      {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
+    </div>
+  );
+}
+
+function a11yProps(index: number) {
+  return {
+    id: `simple-tab-${index}`,
+    'aria-controls': `simple-tabpanel-${index}`,
+  };
+}
+
+const TabsSection = () => {
+  const [value, setValue] = useState(0);
+
+  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+    setValue(newValue);
+  };
+  return (
+    <>
+      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+        <Tabs value={value} onChange={handleChange}>
+          <Tab label="Projects" {...a11yProps(0)} />
+          <Tab label="Activity" {...a11yProps(1)} />
+        </Tabs>
+      </Box>
+      <CustomTabPanel value={value} index={0}>
+        <ProjectsTab />
+      </CustomTabPanel>
+      <CustomTabPanel value={value} index={1}>
+        <ActivityTab />
+      </CustomTabPanel>
+    </>
+  );
+};
+
+const Projects = () => {
   return (
     <Box id="Projects">
-      <Typography variant="h2" mb={2}>
-        {text.projects.title}
-      </Typography>
       <Typography variant="h4" mb={2}>
         Projects
       </Typography>
 
-      <Box>
-        {projects?.map((project: Project) => (
-          <Paper
-            key={project.name}
-            sx={{
-              p: 2,
-              mb: 2,
-            }}
-          >
-            <Link href={project.html_url} variant="subtitle1">
-              {project.name}
-            </Link>
-            <Typography variant="body2" mb={2}>
-              {project.description}
-            </Typography>
-
-            <Box mt={2}>
-              <Chip label={project.language} size="small" color="secondary" />
-              <Typography variant="body2" mt={2}>
-                <em>Updated {moment(project.updated_at).fromNow()}</em>
-              </Typography>
-            </Box>
-          </Paper>
-        ))}
-      </Box>
+      <TabsSection />
     </Box>
   );
 };

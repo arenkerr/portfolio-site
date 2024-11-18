@@ -31,9 +31,9 @@ export const text = {
         title: 'Halo Media, Software Engineer',
         years: '2019 - 2022',
         description: [
+          'At a fast-paced digital agency, worked on a wide range of projects for clients in the music industry to corporations',
           'Conducted detailed code reviews and provided estimates as front end technical lead on multiple projects',
           'Contributed new features and bug fixes to React, React Native, and Angular applications',
-          'Built and interacted with APIs',
         ],
       },
     ],
