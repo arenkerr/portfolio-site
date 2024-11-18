@@ -1,4 +1,6 @@
+'use client';
 import { Button } from '@mui/material';
+import { Link } from 'react-scroll';
 
 interface NavBarItemProps {
   item: string;
@@ -17,9 +19,10 @@ const NavBarItem = ({ item }: NavBarItemProps) => {
         fontWeight: 700,
         color: 'text.primary',
       }}
-      href={`#${item}`}
     >
-      {item}
+      <Link to={item} smooth={true}>
+        {item}
+      </Link>
     </Button>
   );
 };

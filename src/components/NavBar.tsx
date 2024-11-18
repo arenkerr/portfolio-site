@@ -4,12 +4,13 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Container from '@mui/material/Container';
-import { IconButton, Menu, MenuItem, Typography } from '@mui/material';
+import { IconButton, Menu, MenuItem } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { sections } from '@/lib/config';
 import NavBarItem from './NavBarItem';
 import { ThemeMode } from '@/types/theme.types';
 import { DarkModeOutlined, LightModeOutlined } from '@mui/icons-material';
+import { Link } from 'react-scroll';
 
 interface NavBarProps {
   toggleTheme: () => void;
@@ -71,9 +72,9 @@ const ResponsiveAppBar = ({ toggleTheme, theme }: NavBarProps) => {
             >
               {sections.map((section) => (
                 <MenuItem key={section} onClick={handleCloseNavMenu}>
-                  <Typography sx={{ textAlign: 'center' }}>
+                  <Link to={section} smooth={true}>
                     {section}
-                  </Typography>
+                  </Link>
                 </MenuItem>
               ))}
               <IconButton

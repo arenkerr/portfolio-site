@@ -3,6 +3,7 @@ import { Box, Tab, Tabs, Typography } from '@mui/material';
 import ProjectsTab from './ProjectsTab';
 import ActivityTab from './ActivityTab';
 import { useState } from 'react';
+import { Element } from 'react-scroll';
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -40,7 +41,7 @@ const TabsSection = () => {
     setValue(newValue);
   };
   return (
-    <>
+    <Element name="Projects">
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange}>
           <Tab label="Projects" {...a11yProps(0)} />
@@ -53,7 +54,7 @@ const TabsSection = () => {
       <CustomTabPanel value={value} index={1}>
         <ActivityTab />
       </CustomTabPanel>
-    </>
+    </Element>
   );
 };
 
