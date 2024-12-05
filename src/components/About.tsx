@@ -1,10 +1,9 @@
 'use client';
-import { Typography } from '@mui/material';
+import { Link, Typography } from '@mui/material';
 import { text } from '@/lib/config';
 import Image from 'next/image';
 import { useThemeMode } from '@/context/ThemeContext';
 import { Element } from 'react-scroll';
-import { useState } from 'react';
 import CollapseText from './CollapseText';
 
 export default function About() {
@@ -26,6 +25,10 @@ export default function About() {
       </Typography>
       <Typography mt={2}>
         {text.about.description} <CollapseText text={text.about.readMore} />
+      </Typography>
+      <Typography mt={2}>
+        If you would like to get in touch, you can email me at{' '}
+        <Link href="mailto:aren.kerr@gmail.com">aren.kerr@gmail.com</Link>.
       </Typography>
     </Element>
   );
