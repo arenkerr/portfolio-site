@@ -5,6 +5,8 @@ export const text = {
     title: 'Hello, I’m Aren.',
     description:
       "I'm a software engineer dedicated to using technology for good. I have a background in design and illustration and bring creativity and problem-solving to all I do. Throughout my career, I've collaborated with mission-driven organizations, including nonprofits and startups. I’m excited to take on new challenges and continue using my skills to make a positive impact.",
+    readMore:
+      "A little more about me: I was born on the island of Guåhan. I currently reside in Lenapehoking (Philadelphia) with my dog Benji. My hobbies include making art, music (I'm learning guitar), biking, and bouldering.",
   },
   experience: {
     title: 'Experience',
@@ -31,7 +33,7 @@ export const text = {
         title: 'Halo Media, Software Engineer',
         years: '2019 - 2022',
         description: [
-          'At a fast-paced digital agency, worked on a wide range of projects for clients in the music industry to corporations',
+          'At a fast-paced digital agency, worked projects for clients from a wide range of industries, from fashion and music to business',
           'Conducted detailed code reviews and provided estimates as front end technical lead on multiple projects',
           'Contributed new features and bug fixes to React, React Native, and Angular applications',
         ],
