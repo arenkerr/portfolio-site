@@ -30,7 +30,7 @@ const ProjectsTab = () => {
             mb: 2,
           }}
         >
-          <Link href={project.html_url} variant="subtitle1">
+          <Link href={project.html_url} variant="subtitle1" target="_blank">
             {project.name}
           </Link>
           <Typography variant="body2" mb={2}>

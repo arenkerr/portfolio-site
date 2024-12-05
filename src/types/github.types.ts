@@ -12,6 +12,7 @@ export interface Activity {
   created_at: string;
   repo: {
     name: string;
+    url: string;
   };
   actor: {
     display_login: string;

@@ -1,5 +1,5 @@
 'use client';
-import { Box, Grid2, Paper, Typography } from '@mui/material';
+import { Box, Grid2, Link, Paper, Typography } from '@mui/material';
 import { Activity } from '@/types/github.types';
 import moment from 'moment';
 import { getActivity } from '@/api/github';
@@ -46,9 +46,13 @@ const ActivityTab = () => {
                 {activity.actor.display_login} {ACTIVITY_NAMES[activity.type]}
               </Typography>
               {activity.repo && (
-                <Typography variant="body2" mb={2}>
+                <Link
+                  href={`https://www.github.com/${activity.repo.name}`}
+                  variant="subtitle1"
+                  target="_blank"
+                >
                   {activity.repo.name}
-                </Typography>
+                </Link>
               )}
 
               <Box mt={2}>
