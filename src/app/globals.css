@@ -16,7 +16,13 @@ body {
   margin: 0;
 }
 
-a {
+.markdown a {
   color: inherit;
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-color: rgba(220, 238, 236, 0.4);
+}
+
+.markdown a:hover {
+  text-decoration-color: var(--Link-underlineColor);
+  --Link-underlineColor: #dceeec;
 }

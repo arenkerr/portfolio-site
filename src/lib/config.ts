@@ -6,7 +6,7 @@ export const text = {
     description:
       "I'm a software engineer dedicated to using technology for good. I have a background in design and illustration and bring creativity and problem-solving to all I do. Throughout my career, I've collaborated with mission-driven organizations, including nonprofits and startups. I’m excited to take on new challenges and continue using my skills to make a positive impact.",
     readMore:
-      "A little more about me: I was born on the island of Guåhan. I currently reside in Lenapehoking (Philadelphia) with my dog Benji. My hobbies include making art, music (I'm learning guitar), biking, and bouldering.",
+      "A little more about me: I was born on the island of [Guåhan](https://www.guampedia.com/about-guam/). I currently reside in Lenapehoking (Philadelphia) with my dog Benji. My hobbies include making art, music (I'm learning guitar), biking, and bouldering.",
   },
   experience: {
     title: 'Experience',

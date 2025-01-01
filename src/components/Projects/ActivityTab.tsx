@@ -1,11 +1,10 @@
 'use client';
-import { Box, Grid2, Link, Paper, Typography } from '@mui/material';
+import { Avatar, Box, Grid2, Link, Paper, Typography } from '@mui/material';
 import { Activity } from '@/types/github.types';
 import moment from 'moment';
 import { getActivity } from '@/api/github';
 import { useEffect, useState } from 'react';
 import { ACTIVITY_NAMES } from '@/lib/constants/github.constants';
-import Image from 'next/image';
 
 const ActivityTab = () => {
   const [activity, setActivity] = useState<Activity[]>([]);
@@ -34,12 +33,7 @@ const ActivityTab = () => {
         >
           <Grid2 container spacing={1}>
             <Grid2>
-              <Image
-                src={activity.actor.avatar_url}
-                alt="github avatar"
-                width="45"
-                height="45"
-              />
+              <Avatar alt="github avatar" src={activity.actor.avatar_url} />
             </Grid2>
             <Grid2>
               <Typography variant="subtitle1">

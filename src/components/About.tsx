@@ -23,8 +23,9 @@ export default function About() {
       <Typography variant="subtitle2" color={'textSecondary'}>
         <em>they/them</em>
       </Typography>
-      <Typography mt={2}>
-        {text.about.description} <CollapseText text={text.about.readMore} />
+      <Typography mt={2} component={'div'}>
+        {text.about.description}{' '}
+        <CollapseText text={text.about.readMore} markdown={true} />
       </Typography>
       <Typography mt={2}>
         If you would like to get in touch, you can email me at{' '}
